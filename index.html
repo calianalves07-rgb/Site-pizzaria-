@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Notte Pizzeria — Uma experiência italiana em cada fatia</title>
+<meta name="description" content="La Notte Pizzeria: ingredientes selecionados, massas artesanais e sabores preparados para transformar cada momento em uma experiência especial.">
+<meta name="theme-color" content="#090909">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090909;--bg2:#121212;--bg3:#1C1C1C;--gold:#C6A15B;--wine:#651E29;--cream:#E9DDC8;--soft:#F4F0E8;--serif:'Cormorant Garamond',Georgia,serif;--sans:Inter,system-ui,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px;background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--cream);font:400 16px/1.7 var(--sans);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--soft);line-height:1.1;margin:0}
+h2{font-size:clamp(2rem,5vw,3.4rem)}
+.wrap{width:min(1180px,100% - 40px);margin:auto}
+section{padding:clamp(70px,10vw,130px) 0;position:relative}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.lead{color:#cbbfa8;max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 26px;border:1px solid var(--gold);color:var(--gold);background:transparent;font:600 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:.35s;position:relative;overflow:hidden}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:#090909;box-shadow:0 8px 30px -8px rgba(198,161,91,.6);transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.btn.fill{background:var(--gold);color:#090909}
+.btn.fill:hover{background:var(--soft);border-color:var(--soft)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:.4s}
+header.sc{background:rgba(9,9,9,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(198,161,91,.2)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:var(--serif);font-size:1.7rem;letter-spacing:.22em;color:var(--soft);line-height:1}
+.logo small{display:block;font:500 .55rem var(--sans);letter-spacing:.5em;color:var(--gold);margin-top:4px}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;align-items:center}
+nav a:not(.btn){font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;position:relative;padding:6px 0}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:.4s}
+nav a:not(.btn):hover::after{transform:scaleX(1);transform-origin:left}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
+.burger i,.burger i::before{position:absolute;left:10px;width:24px;height:1.5px;background:var(--gold);transition:.3s}
+.burger i{top:21px}.burger i::before{content:"";left:0;top:-7px;width:16px}
+.burger[aria-expanded=true] i{transform:rotate(45deg)}.burger[aria-expanded=true] i::before{transform:rotate(-90deg) translate(7px,0);width:24px}
+@media(max-width:900px){.burger{display:block}
+nav{position:fixed;inset:0;background:rgba(9,9,9,.97);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.4s}
+nav.open{opacity:1;visibility:visible}
+nav ul{flex-direction:column;gap:26px}nav a:not(.btn){font-size:1.1rem}
+header.menu{background:transparent;border:0;backdrop-filter:none}.logo,.burger{position:relative;z-index:2}}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 90px;overflow:hidden;background:radial-gradient(ellipse at 75% 45%,#3a1f12 0,#1a0f0a 35%,var(--bg) 70%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 8%,rgba(9,9,9,.55) 55%,rgba(9,9,9,.2));pointer-events:none}
+.hero-art{position:absolute;right:-8%;top:50%;width:min(780px,95vw);aspect-ratio:1;transform:translateY(-50%);will-change:transform}
+.hero-art .ring{position:absolute;inset:-5%;border:1px dashed rgba(198,161,91,.35);border-radius:50%;animation:spin 80s linear infinite}
+.hero-art svg{width:100%;height:100%;filter:drop-shadow(0 40px 60px rgba(0,0,0,.7));animation:float 9s ease-in-out infinite}
+.hero-in{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);max-width:760px;margin:0 0 22px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{max-width:520px;color:#d8ccb4;margin:0 0 34px;font-size:1.05rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-in>*{opacity:0;transform:translateY(26px);animation:up 1s .2s forwards cubic-bezier(.2,.7,.2,1)}
+.hero-in>*:nth-child(2){animation-delay:.4s}.hero-in>*:nth-child(3){animation-delay:.6s}.hero-in>*:nth-child(4){animation-delay:.8s}
+.flag{display:flex;gap:0;width:54px;height:3px;margin-bottom:22px}.flag i{flex:1}.flag i:nth-child(1){background:#2f6b3f}.flag i:nth-child(2){background:var(--soft)}.flag i:nth-child(3){background:var(--wine)}
+.scroll{position:absolute;bottom:calc(26px + env(safe-area-inset-bottom,0px));left:50%;translate:-50% 0;z-index:3;width:24px;height:42px;border:1px solid var(--gold);border-radius:14px}
+.scroll i{position:absolute;left:50%;top:8px;width:3px;height:8px;margin-left:-1.5px;background:var(--gold);border-radius:2px;animation:dot 1.8s infinite}
+@keyframes up{to{opacity:1;transform:none}}@keyframes spin{to{rotate:360deg}}@keyframes float{50%{transform:translateY(-12px) rotate(1.5deg)}}@keyframes dot{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(16px)}}
+/* generic */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.frame{position:relative;aspect-ratio:4/5;background:radial-gradient(circle at 50% 45%,#3b2214,#150d08);border:1px solid rgba(198,161,91,.25);overflow:hidden}
+.frame::before{content:"";position:absolute;inset:14px;border:1px solid rgba(198,161,91,.4);z-index:2;pointer-events:none}
+.frame svg,.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;padding:8%}
+.frame img{padding:0}
+.about{background:var(--bg2)}
+.about h2{margin-bottom:20px}.about .btn{margin-top:28px}
+/* menu */
+.head{text-align:center;margin-bottom:44px}.head .eyebrow{justify-content:center}.head .eyebrow::before{display:none}.head p{margin:12px auto 0;color:#cbbfa8}
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:42px}
+.chip{background:none;border:1px solid rgba(198,161,91,.3);color:var(--cream);padding:10px 20px;min-height:44px;font:500 .78rem var(--sans);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:40px;transition:.3s}
+.chip:hover{border-color:var(--gold)}.chip[aria-pressed=true]{background:var(--gold);color:#090909;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+.card{background:linear-gradient(180deg,var(--bg3),var(--bg2));border:1px solid rgba(198,161,91,.15);display:flex;flex-direction:column;transition:.45s;animation:up .6s both}
+.card:hover{transform:translateY(-8px);border-color:rgba(198,161,91,.6);box-shadow:0 24px 50px -20px rgba(0,0,0,.9),0 0 0 1px rgba(198,161,91,.15)}
+.ph{aspect-ratio:1;overflow:hidden;background:radial-gradient(circle at 50% 50%,#3b2214,#120a06);position:relative}
+.ph svg,.ph img{width:100%;height:100%;object-fit:cover;padding:9%;transition:transform .9s cubic-bezier(.2,.7,.2,1)}.ph img{padding:0}
+.card:hover .ph svg,.card:hover .ph img,.tile:hover svg,.tile:hover img{transform:scale(1.1) rotate(2deg)}
+.tag{position:absolute;top:12px;left:12px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(9,9,9,.75);color:var(--gold);padding:4px 10px;border:1px solid rgba(198,161,91,.35)}
+.info{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.info h3{font-size:1.55rem}.info p{margin:0;font-size:.88rem;color:#b9ad96;flex:1}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+.price{font-family:var(--serif);font-size:1.5rem;color:var(--gold)}
+.buy .btn{min-height:42px;padding:0 14px;font-size:.68rem}
+.note{text-align:center;font-size:.75rem;color:#8c836f;margin-top:26px}
+/* feature */
+.feat{min-height:90svh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(ellipse at 30% 50%,#4a1a22 0,#1a0c0e 45%,var(--bg) 80%)}
+.feat-art{position:absolute;left:-12%;top:50%;width:min(820px,110vw);aspect-ratio:1;translate:0 -50%;opacity:.85}
+.feat-art svg{width:100%;height:100%;filter:drop-shadow(0 40px 70px #000)}
+.feat .wrap{position:relative;z-index:2;display:flex;justify-content:flex-end}
+.feat .box{max-width:520px;background:rgba(9,9,9,.6);backdrop-filter:blur(6px);padding:clamp(24px,4vw,46px);border:1px solid rgba(198,161,91,.3)}
+.feat h2{margin-bottom:18px}.feat .btn{margin-top:26px}
+@media(max-width:700px){.feat .wrap{justify-content:center}.feat-art{opacity:.4}}
+/* diffs */
+.diffs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(198,161,91,.2);border:1px solid rgba(198,161,91,.2)}
+.diff{background:var(--bg);padding:38px 28px;text-align:center;transition:.4s}.diff:hover{background:var(--bg2)}
+.diff svg{width:46px;height:46px;margin:0 auto 18px;stroke:var(--gold);fill:none;stroke-width:1.2;transition:.5s}.diff:hover svg{transform:translateY(-5px) scale(1.08)}
+.diff h3{font-size:1.45rem;margin-bottom:8px}.diff p{margin:0;font-size:.88rem;color:#a99d86}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px}
+.tile{position:relative;overflow:hidden;border:1px solid rgba(198,161,91,.2);background:#150d08;padding:0;cursor:zoom-in;transition:border-color .4s;display:block}
+.tile:hover{border-color:var(--gold)}.tile svg,.tile img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.tile span{position:absolute;inset:auto 0 0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);text-align:left}
+.t1{grid-column:span 2;grid-row:span 2}.t4{grid-row:span 2}.t5{grid-column:span 2}
+@media(max-width:800px){.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}.t5{grid-column:span 2}}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}.lb figure{margin:0;width:min(760px,100%);text-align:center}.lb figure>div{aspect-ratio:1;max-height:72vh;margin:auto;background:#150d08;border:1px solid var(--gold)}
+.lb svg,.lb img{width:100%;height:100%;object-fit:contain}.lb figcaption{margin-top:14px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+.lb button{position:absolute;background:none;border:1px solid rgba(198,161,91,.5);color:var(--gold);width:48px;height:48px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.lb .x{top:calc(16px + env(safe-area-inset-top,0px));right:16px}.lb .p{left:12px;top:50%}.lb .n{right:12px;top:50%}
+/* story, quotes */
+.story{background:var(--bg2)}
+.quote{background:var(--bg3);border:1px solid rgba(198,161,91,.15);padding:32px;position:relative}
+.quote::before{content:"“";font:5rem/1 var(--serif);color:var(--gold);position:absolute;top:8px;left:22px;opacity:.5}
+.quote p{margin:28px 0 18px;font-family:var(--serif);font-size:1.3rem;color:var(--soft);line-height:1.4}
+.quote small{display:block;color:#8c836f;font-size:.75rem;letter-spacing:.1em}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+/* contact */
+.list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:18px}
+.list b{display:block;color:var(--gold);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:2px 20px}.hrs dd{margin:0}.hrs dt{color:var(--soft)}
+.map{margin-top:24px;aspect-ratio:16/9;border:1px solid rgba(198,161,91,.25);display:grid;place-items:center;text-align:center;padding:20px;color:#8c836f;font-size:.85rem;background:repeating-linear-gradient(45deg,#111,#111 10px,#151515 10px,#151515 20px)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(1) invert(.9) contrast(.9)}
+form{display:grid;gap:16px;background:var(--bg2);padding:clamp(22px,4vw,40px);border:1px solid rgba(198,161,91,.2)}
+label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:grid;gap:6px}
+input,textarea{background:var(--bg);border:1px solid #333;color:var(--soft);padding:13px 14px;font:inherit;border-radius:2px;width:100%;transition:.3s}
+input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,161,91,.15)}
+[aria-invalid=true]{border-color:#b4455a}.err{color:#e08a99;font-size:.75rem;text-transform:none;letter-spacing:0;min-height:1em}
+/* footer */
+footer{background:#050505;border-top:1px solid rgba(198,161,91,.3);padding:64px 0 30px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+@media(max-width:800px){.two,.fg{grid-template-columns:1fr}.hero::after{background:linear-gradient(180deg,rgba(9,9,9,.5),rgba(9,9,9,.85))}.hero-art{right:-35%;opacity:.7}}
+footer h4{font:600 .72rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.88rem;color:#a99d86}footer a:hover{color:var(--gold)}
+.copy{border-top:1px solid #1e1e1e;margin-top:40px;padding-top:22px;font-size:.75rem;color:#6f6858;text-align:center}
+/* cart */
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:60px;height:60px;border-radius:50%;background:var(--gold);color:#090909;border:0;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.6);display:grid;place-items:center;transition:.3s}
+.fab:hover{transform:scale(1.08)}.fab svg{width:26px;height:26px;stroke:#090909;fill:none;stroke-width:1.8}
+.fab b{position:absolute;top:-4px;right:-4px;min-width:22px;height:22px;border-radius:11px;background:var(--wine);color:var(--soft);font:600 .72rem/22px var(--sans);text-align:center;padding:0 5px}
+.fab.bump{animation:bump .4s}@keyframes bump{50%{transform:scale(1.25)}}
+.shade{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:79;opacity:0;visibility:hidden;transition:.4s}.shade.on{opacity:1;visibility:visible}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:80;background:var(--bg2);border-left:1px solid var(--gold);transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+aside.on{transform:none}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid #262626}.ch h3{font-size:1.7rem}
+.ch button{background:none;border:0;color:var(--gold);font-size:1.6rem;cursor:pointer;width:44px;height:44px}
+.items{flex:1;overflow:auto;padding:10px 22px}
+.it{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:16px 0;border-bottom:1px solid #222}.it b{color:var(--soft);font-weight:500}.it small{color:#8c836f}
+.q{display:flex;align-items:center;gap:8px;grid-column:1/-1}.q button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(198,161,91,.5);background:none;color:var(--gold);cursor:pointer;font-size:1.05rem}.q button:hover{background:var(--gold);color:#090909}
+.q .rm{margin-left:auto;width:auto;border:0;border-radius:0;font-size:.72rem;text-decoration:underline;color:#8c836f}
+.empty{text-align:center;color:#8c836f;padding:60px 10px}
+.cf{padding:20px 22px;border-top:1px solid #262626;display:grid;gap:12px}.tot{display:flex;justify-content:space-between;font-family:var(--serif);font-size:1.7rem;color:var(--soft)}.tot span:last-child{color:var(--gold)}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));translate:-50% 20px;background:var(--soft);color:#090909;padding:12px 20px;border-radius:2px;z-index:100;font-size:.85rem;opacity:0;pointer-events:none;transition:.4s;max-width:90vw;text-align:center}.toast.on{opacity:1;translate:-50% 0}
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.js .rv,.hero-in>*{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap bar">
+<a href="#inicio" class="logo" aria-label="La Notte Pizzeria">LA NOTTE<small>PIZZERIA</small></a>
+<nav id="nv" aria-label="Principal"><ul>
+<li><a href="#inicio">Início</a></li><li><a href="#cardapio">Cardápio</a></li><li><a href="#historia">Nossa história</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#contato">Contato</a></li>
+<li><a class="btn fill" href="#cardapio">Fazer pedido</a></li></ul></nav>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="nv" aria-label="Abrir menu"><i></i></button>
+</div></header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="hero-art" id="ha"><div class="ring"></div><div id="heroPizza"></div></div>
+<div class="wrap hero-in">
+<div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="eyebrow">Tradição italiana • Sabor inesquecível</div>
+<h1>Uma experiência <em>italiana</em> em cada fatia.</h1>
+<p>Ingredientes selecionados, massas artesanais e sabores preparados para transformar cada momento em uma experiência especial.</p>
+<div class="cta"><a class="btn fill" href="#cardapio">Explorar cardápio</a><a class="btn" href="#cardapio" data-order>Fazer pedido</a></div>
+</div>
+<a class="scroll" href="#sobre" aria-label="Rolar para baixo"><i></i></a>
+</section>
+
+<section class="about" id="sobre"><div class="wrap two">
+<div class="frame rv" id="aboutArt"></div>
+<div class="rv"><div class="eyebrow">Nossa essência</div>
+<h2>Mais do que pizza. Uma paixão pela gastronomia italiana.</h2>
+<p class="lead" style="margin-top:20px">Cada receita nasce da combinação entre ingredientes selecionados, cuidado artesanal e paixão pelos sabores da Itália.</p>
+<a class="btn" href="#historia">Conheça nossa história</a></div>
+</div></section>
+
+<section id="cardapio"><div class="wrap">
+<div class="head rv"><div class="eyebrow">Cardápio</div><h2>Sabores que conquistam.</h2><p>Descubra nossas combinações especiais.</p></div>
+<div class="filters rv" role="group" aria-label="Filtrar por categoria" id="flt"></div>
+<div class="grid" id="mn" aria-live="polite"></div>
+<p class="note">Preços demonstrativos — edite em CFG.produtos no início do script.</p>
+</div></section>
+
+<section class="feat" id="destaque">
+<div class="feat-art" id="featArt"></div>
+<div class="wrap"><div class="box rv"><div class="eyebrow">Destaque da casa</div>
+<h2>A arte de criar sabores extraordinários.</h2>
+<p class="lead">Uma combinação especial de ingredientes selecionados, preparada artesanalmente para quem aprecia uma verdadeira experiência gastronômica.</p>
+<button class="btn fill" id="try">Experimentar agora</button></div></div>
+</section>
+
+<section><div class="wrap"><div class="diffs rv" id="df"></div></div></section>
+
+<section id="galeria" style="padding-top:0"><div class="wrap">
+<div class="head rv"><div class="eyebrow">Galeria</div><h2>Instantes La Notte.</h2></div>
+<div class="gal rv" id="gl"></div>
+</div></section>
+
+<section class="story" id="historia"><div class="wrap two">
+<div class="rv"><div class="eyebrow">Nossa história</div>
+<h2>Uma tradição feita para compartilhar.</h2>
+<p class="lead" style="margin-top:20px" contenteditable="false">[Espaço editável] Conte aqui a história real da pizzaria: origem, fundadores, receitas de família e o que torna a casa única. Substitua este texto por informações verdadeiras do estabelecimento.</p></div>
+<div class="frame rv" id="storyArt" style="aspect-ratio:1"></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head rv"><div class="eyebrow">Depoimentos</div><h2>Quem provou, aprovou.</h2></div>
+<div class="quotes rv" id="qt"></div>
+</div></section>
+
+<section id="contato" class="about"><div class="wrap two" style="align-items:start">
+<div class="rv"><div class="eyebrow">Localização e contato</div><h2>Venha viver a experiência.</h2>
+<ul class="list" id="ci"></ul><div class="map" id="mp"></div></div>
+<form class="rv" id="cf" novalidate><h3 style="font-size:2rem">Fale conosco</h3>
+<label>Nome<input name="n" autocomplete="name" required><span class="err"></span></label>
+<label>Telefone<input name="t" type="tel" autocomplete="tel" required><span class="err"></span></label>
+<label>Mensagem<textarea name="m" rows="4" required></textarea><span class="err"></span></label>
+<button class="btn fill" type="submit">Fale conosco</button><small id="fs" role="status" style="color:var(--gold)"></small></form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="fg">
+<div><div class="logo">LA NOTTE<small>PIZZERIA</small></div><p style="font-size:.88rem;color:#a99d86;margin-top:18px">Pizzas artesanais inspiradas na tradição italiana, preparadas com ingredientes selecionados.</p></div>
+<div><h4>Navegar</h4><ul><li><a href="#inicio">Início</a></li><li><a href="#cardapio">Cardápio</a></li><li><a href="#historia">Nossa história</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#contato">Contato</a></li></ul></div>
+<div><h4>Contato</h4><ul id="fc"></ul></div>
+<div><h4>Horários</h4><ul id="fh"></ul></div>
+</div><div class="copy">© <span id="yr"></span> La Notte Pizzeria. Todos os direitos reservados. Site demonstrativo com dados fictícios.</div></div></footer>
+
+<button class="fab" id="fab" aria-label="Abrir pedido"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11H6.2zM9 8V6a3 3 0 0 1 6 0v2"/></svg><b id="cnt">0</b></button>
+<div class="shade" id="sh"></div>
+<aside id="cart" aria-hidden="true" aria-label="Seu pedido"><div class="ch"><h3>Seu pedido</h3><button id="cx" aria-label="Fechar">×</button></div>
+<div class="items" id="ci2"></div>
+<div class="cf"><div class="tot"><span>Total</span><span id="tt">R$ 0,00</span></div>
+<label>Seu nome (opcional)<input id="cn" autocomplete="name"></label>
+<button class="btn fill" id="wa">Finalizar pelo WhatsApp</button></div></aside>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagem ampliada"><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><figure><div id="lbi"></div><figcaption id="lbc"></figcaption></figure><button class="n" aria-label="Próxima">›</button></div>
+<div class="toast" id="ts" role="status"></div>
+
+<script>
+document.documentElement.classList.add('js');
+/* ===== CONFIGURAÇÃO ÚNICA — edite aqui ===== */
+const CFG={
+ nome:'La Notte Pizzeria',
+ telefone:'',            // ex.: '(11) 4000-0000'
+ whatsapp:'',            // somente dígitos com DDI+DDD, ex.: '5511999999999'
+ endereco:'',            // ex.: 'Rua Exemplo, 123 – Cidade/UF'
+ instagram:'',           // ex.: 'lanottepizzeria'
+ mapaEmbedUrl:'',        // URL de incorporação do Google Maps
+ horarios:[['Ter – Qui','a definir'],['Sex – Sáb','a definir'],['Dom','a definir']],
+ categorias:{trad:'Tradicionais',esp:'Especiais',prem:'Premium',doce:'Doces'},
+ // img: URL ou data URI da foto real (vazio = ilustração provisória)
+ produtos:[
+  {id:'mar',cat:'trad',nome:'Margherita',desc:'Molho de tomate, muçarela, manjericão fresco e azeite.',preco:42,img:'',c:['#2f6b3f','#d94a3a'],n:9},
+  {id:'cal',cat:'trad',nome:'Calabresa',desc:'Calabresa fatiada, cebola e muçarela sobre molho artesanal.',preco:46,img:'',c:['#9c3a2c','#e8dcc2'],n:16},
+  {id:'por',cat:'trad',nome:'Portuguesa',desc:'Presunto, ovos, cebola, ervilha e azeitonas.',preco:50,img:'',c:['#e0c36a','#2e2a1d','#d98b8b'],n:16},
+  {id:'qua',cat:'esp',nome:'Quatro Queijos',desc:'Muçarela, provolone, parmesão e gorgonzola.',preco:54,img:'',c:['#f1d98a','#fff0c0'],n:12},
+  {id:'pep',cat:'esp',nome:'Pepperoni',desc:'Fatias de pepperoni sobre muçarela e molho de tomate.',preco:56,img:'',c:['#a8321f','#c4452f'],n:20},
+  {id:'fra',cat:'esp',nome:'Frango com Catupiry',desc:'Frango desfiado temperado com catupiry cremoso.',preco:52,img:'',c:['#e8c88a','#fff0d0'],n:14},
+  {id:'bur',cat:'prem',nome:'Burrata Especial',desc:'Burrata cremosa, tomates confitados, rúcula e pesto.',preco:78,img:'',c:['#fffaf0','#c0392b','#3f7a3f'],n:8},
+  {id:'cho',cat:'doce',nome:'Chocolate com Morango',desc:'Chocolate cremoso coberto com morangos frescos.',preco:48,img:'',c:['#d2305a','#f06a8a'],n:11,doce:1}
+ ],
+ destaqueId:'bur',
+ depoimentos:['Depoimento demonstrativo: substitua pelo relato real de um cliente.','Espaço reservado para avaliação verdadeira. Conteúdo fictício.','Insira aqui o comentário de um cliente com sua autorização.']
+};
+/* ===== utilitários ===== */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function pizza(c,n,doce,seed=3){let r=seed*977+13;const R=()=>(r=(r*9301+49297)%233280)/233280;let t='';
+ for(let i=0;i<n;i++){const a=R()*6.28,d=Math.sqrt(R())*70;t+=`<circle cx="${(100+Math.cos(a)*d).toFixed(1)}" cy="${(100+Math.sin(a)*d).toFixed(1)}" r="${(4+R()*5).toFixed(1)}" fill="${c[i%c.length]}"/>`}
+ return `<svg viewBox="0 0 200 200" role="img" aria-label="Ilustração provisória de pizza"><circle cx="100" cy="100" r="94" fill="#b27a38"/><circle cx="100" cy="100" r="88" fill="#d79c52"/><circle cx="100" cy="100" r="80" fill="${doce?'#3b1d12':'#c7432b'}"/>${doce?'':'<circle cx="100" cy="100" r="76" fill="#f0d27a" opacity=".85"/>'}${t}<circle cx="70" cy="62" r="34" fill="#fff" opacity=".05"/></svg>`}
+const art=p=>p.img?`<img src="${p.img}" alt="${p.nome}" loading="lazy">`:pizza(p.c,p.n,p.doce,p.id.charCodeAt(0));
+const byId=id=>CFG.produtos.find(p=>p.id===id);
+const toast=m=>{const t=$('#ts');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('on'),2600)};
+/* ===== header / menu ===== */
+const hd=$('#hd'),nv=$('#nv'),bg=$('#bg');
+addEventListener('scroll',()=>{hd.classList.toggle('sc',scrollY>40);const h=$('#ha');if(h&&scrollY<innerHeight)h.style.transform=`translateY(calc(-50% + ${scrollY*.15}px))`},{passive:true});
+function menu(o){nv.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);hd.classList.toggle('menu',o);document.body.style.overflow=o?'hidden':''}
+bg.onclick=()=>menu(!nv.classList.contains('open'));
+$$('nav a').forEach(a=>a.addEventListener('click',()=>menu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape'){menu(false);cartOpen(false);lbClose()}});
+/* ===== hero / ilustrações ===== */
+const f=byId(CFG.destaqueId);
+$('#heroPizza').innerHTML=pizza(['#c0392b','#3f7a3f','#fffaf0'],14,0,5);
+$('#aboutArt').innerHTML=pizza(['#c0392b','#2f6b3f','#f4f0e8'],12,0,8);
+$('#storyArt').innerHTML=pizza(['#a8321f','#e0c36a'],18,0,2);
+$('#featArt').innerHTML=pizza(f.c,f.n+6,f.doce,9);
+/* ===== cardápio ===== */
+let cat='all';
+$('#flt').innerHTML=[['all','Todas'],...Object.entries(CFG.categorias)].map(([k,v])=>`<button class="chip" data-c="${k}" aria-pressed="${k==='all'}">${v}</button>`).join('');
+function renderMenu(){
+ $('#mn').innerHTML=CFG.produtos.filter(p=>cat==='all'||p.cat===p.cat&&p.cat===cat).map((p,i)=>`<article class="card" style="animation-delay:${i*70}ms"><div class="ph">${art(p)}<span class="tag">${CFG.categorias[p.cat]}</span></div><div class="info"><h3>${p.nome}</h3><p>${p.desc}</p><div class="buy"><span class="price">${brl(p.preco)}</span><button class="btn" data-add="${p.id}" aria-label="Adicionar ${p.nome} ao pedido">Adicionar ao pedido</button></div></div></article>`).join('')}
+$('#flt').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;cat=b.dataset.c;$$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));renderMenu()};
+$('#mn').onclick=e=>{const b=e.target.closest('[data-add]');if(b){add(b.dataset.add);b.textContent='Adicionado ✓';setTimeout(()=>b.textContent='Adicionar ao pedido',1200)}};
+/* ===== carrinho ===== */
+const cart={};
+function add(id,d=1){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];renderCart();if(d>0){toast(byId(id).nome+' adicionada ao pedido');$('#fab').classList.remove('bump');void $('#fab').offsetWidth;$('#fab').classList.add('bump')}}
+function renderCart(){
+ const ids=Object.keys(cart);let tot=0,q=0;
+ $('#ci2').innerHTML=ids.length?ids.map(id=>{const p=byId(id),n=cart[id];tot+=p.preco*n;q+=n;return `<div class="it"><b>${p.nome}</b><span>${brl(p.preco*n)}</span><small>${brl(p.preco)} cada</small><span></span><div class="q"><button data-d="-1" data-id="${id}" aria-label="Diminuir">−</button><span aria-live="polite">${n}</span><button data-d="1" data-id="${id}" aria-label="Aumentar">+</button><button class="rm" data-rm="${id}">Remover</button></div></div>`}).join(''):'<div class="empty">Seu pedido está vazio.<br>Escolha uma pizza no cardápio.</div>';
+ $('#tt').textContent=brl(tot);$('#cnt').textContent=q;$('#cnt').hidden=!q;$('#wa').disabled=!q;$('#wa').style.opacity=q?1:.4}
+$('#ci2').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.rm){delete cart[b.dataset.rm];renderCart()}else if(b.dataset.d)add(b.dataset.id,+b.dataset.d)};
+function cartOpen(o){$('#cart').classList.toggle('on',o);$('#sh').classList.toggle('on',o);$('#cart').setAttribute('aria-hidden',!o);if(o)$('#cx').focus()}
+$('#fab').onclick=()=>cartOpen(true);$('#cx').onclick=$('#sh').onclick=()=>cartOpen(false);
+$('#try').onclick=()=>{add(CFG.destaqueId);cartOpen(true)};
+const waNum=()=>CFG.whatsapp.replace(/\D/g,'');
+$('#wa').onclick=()=>{
+ if(waNum().length<10){toast('Configure o WhatsApp em CFG.whatsapp para enviar pedidos.');return}
+ const l=Object.keys(cart).map(id=>{const p=byId(id);return `• ${cart[id]}x ${p.nome} — ${brl(p.preco*cart[id])}`});
+ const tot=Object.keys(cart).reduce((s,id)=>s+byId(id).preco*cart[id],0),nm=$('#cn').value.trim();
+ const msg=`Olá, ${CFG.nome}! Gostaria de fazer o seguinte pedido:\n\n${l.join('\n')}\n\nTotal: ${brl(tot)}${nm?`\nNome: ${nm}`:''}`;
+ window.open(`https://wa.me/${waNum()}?text=${encodeURIComponent(msg)}`,'_blank','noopener')};
+/* ===== diferenciais ===== */
+const ico={
+ leaf:'<path d="M5 19C5 9 12 4 20 4c0 9-5 15-15 15zM5 19l9-9"/>',
+ dough:'<ellipse cx="12" cy="14" rx="9" ry="5"/><path d="M5 11c0-4 3-7 7-7s7 3 7 7M9 8l1 3M14 7l1 3"/>',
+ star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+ gem:'<path d="M6 4h12l3 5-9 11L3 9zM3 9h18M9 4l-2 5 5 11 5-11-2-5"/>'};
+$('#df').innerHTML=[['leaf','Ingredientes selecionados','Escolhidos com critério para valorizar cada sabor.'],['dough','Massa de preparo artesanal','Preparada com cuidado, tempo e técnica.'],['star','Receitas especiais','Combinações autorais inspiradas na Itália.'],['gem','Qualidade em cada detalhe','Da cozinha à mesa, atenção em tudo.']].map(([i,t,d])=>`<div class="diff"><svg viewBox="0 0 24 24" aria-hidden="true">${ico[i]}</svg><h3>${t}</h3><p>${d}</p></div>`).join('');
+/* ===== galeria + lightbox ===== */
+const G=[['Pizzas artesanais','t1',['#c0392b','#3f7a3f'],14],['Preparação das massas','t2',['#e8dcc2'],6],['Forno a lenha','t3',['#a8321f','#e0a040'],10],['Ingredientes frescos','t4',['#2f6b3f','#d94a3a','#fffaf0'],16],['Ambiente da pizzaria','t5',['#c6a15b','#651E29'],12],['Pizzas artesanais','t6',['#a8321f','#f1d98a'],18]];
+$('#gl').innerHTML=G.map((g,i)=>`<button class="tile ${g[1]}" data-i="${i}" aria-label="Ampliar: ${g[0]}">${pizza(g[2],g[3],0,i+2)}<span>${g[0]} · foto a inserir</span></button>`).join('');
+let li=0;const lb=$('#lb');
+function lbShow(i){li=(i+G.length)%G.length;$('#lbi').innerHTML=pizza(G[li][2],G[li][3],0,li+2);$('#lbc').textContent=G[li][0];lb.classList.add('on');$('.x',lb).focus()}
+function lbClose(){lb.classList.remove('on')}
+$('#gl').onclick=e=>{const t=e.target.closest('.tile');if(t)lbShow(+t.dataset.i)};
+$('.x',lb).onclick=lbClose;$('.p',lb).onclick=()=>lbShow(li-1);$('.n',lb).onclick=()=>lbShow(li+1);
+lb.onclick=e=>{if(e.target===lb)lbClose()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='ArrowLeft')lbShow(li-1);if(e.key==='ArrowRight')lbShow(li+1)});
+/* ===== depoimentos, contato, rodapé ===== */
+$('#qt').innerHTML=CFG.depoimentos.map((d,i)=>`<figure class="quote" style="margin:0"><p>${d}</p><small>NOME DO CLIENTE · CONTEÚDO FICTÍCIO</small></figure>`).join('');
+const ph=CFG.telefone||'Telefone a configurar',ad=CFG.endereco||'Endereço a configurar',ig=CFG.instagram?'@'+CFG.instagram.replace('@',''):'Instagram a configurar';
+const wl=waNum()?`<a href="https://wa.me/${waNum()}" target="_blank" rel="noopener">${CFG.whatsapp}</a>`:'WhatsApp a configurar';
+const igl=CFG.instagram?`<a href="https://instagram.com/${CFG.instagram.replace('@','')}" target="_blank" rel="noopener">${ig}</a>`:ig;
+$('#ci').innerHTML=`<li><b>Endereço</b>${ad}</li><li><b>Horário de funcionamento</b><dl class="hrs" style="margin:6px 0 0">${CFG.horarios.map(h=>`<dt>${h[0]}</dt><dd>${h[1]}</dd>`).join('')}</dl></li><li><b>Telefone</b>${ph}</li><li><b>WhatsApp</b>${wl}</li><li><b>Instagram</b>${igl}</li>`;
+$('#mp').innerHTML=CFG.mapaEmbedUrl?`<iframe src="${CFG.mapaEmbedUrl}" loading="lazy" title="Mapa"></iframe>`:'Mapa disponível quando houver endereço real configurado em CFG.mapaEmbedUrl.';
+$('#fc').innerHTML=`<li>${ad}</li><li>${ph}</li><li>${wl}</li><li>${igl}</li>`;
+$('#fh').innerHTML=CFG.horarios.map(h=>`<li>${h[0]}: ${h[1]}</li>`).join('');
+$('#yr').textContent=new Date().getFullYear();
+const form=$('#cf');
+form.onsubmit=e=>{e.preventDefault();let ok=true;const v={};
+ [['n','Informe seu nome.',x=>x.length>=2],['t','Informe um telefone válido.',x=>x.replace(/\D/g,'').length>=10],['m','Escreva sua mensagem.',x=>x.length>=5]].forEach(([k,m,t])=>{const el=form.elements[k],val=el.value.trim();v[k]=val;const good=t(val);el.setAttribute('aria-invalid',!good);el.nextElementSibling.textContent=good?'':m;if(!good)ok=false});
+ if(!ok){$('#fs').textContent='';form.querySelector('[aria-invalid=true]').focus();return}
+ if(waNum().length<10){$('#fs').textContent='Validado! Configure CFG.whatsapp para que a mensagem seja enviada.';return}
+ window.open(`https://wa.me/${waNum()}?text=${encodeURIComponent(`Olá! Sou ${v.n} (${v.t}).\n${v.m}`)}`,'_blank','noopener');$('#fs').textContent='Abrindo o WhatsApp para você enviar a mensagem.';form.reset()};
+/* ===== revelação ao rolar + init ===== */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+renderMenu();renderCart();
+</script>
+</body>
+</html>
